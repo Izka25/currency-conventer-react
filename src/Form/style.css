@@ -1,0 +1,31 @@
+.legend {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.label {
+  font-size: 30px;
+  font-style: italic;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.button {
+  font-weight: bold;
+  width: 40%;
+  padding: 5px;
+  background-color: yellow;
+}
+
+.cash {
+  padding: 8px 6px 6px 6px;
+  background-color: lightgreen;
+  font-weight: bold;
+  font-size: 15px;
+}
+.currency {
+  padding: 8px 6px 6px 6px;
+  background-color: lightgreen;
+  font-weight: bold;
+  font-size: 15px;
+}

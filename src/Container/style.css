@@ -1,0 +1,7 @@
+.container {
+  max-width: 700px;
+  margin: 200px 500px;
+  padding: 0 20px;
+  border: 10px double rgb(0, 98, 255);
+  background: rgb(43, 209, 255);
+}
