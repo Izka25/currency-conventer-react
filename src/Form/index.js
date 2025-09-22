@@ -2,7 +2,7 @@ import "./style.css";
 
 const Form = () => (
   <form className="form">
-    <fielset>
+    <fieldset>
       <legend className="legend">Kalkulator walutowy</legend>
       <p>
         <label className="label">
@@ -14,7 +14,7 @@ const Form = () => (
             name="cash"
             step="1"
             min="1"
-            autofocus
+            autoFocus
             required
           />
         </label>
@@ -22,14 +22,14 @@ const Form = () => (
       <p>
         <label className="label">
           Waluta:{" "}
-          <input
+          <select
             className="currency"
             type="tekst"
             name="currency"
             placeholder="Wybór waluty"
             list="currency"
-          />
-          <datalist id="currency" />
+          >
+          
           <option value="eur">EUR-Euro</option>
           <option value="aud">AUD-Dolar australijski</option>
           <option value="gbp">GBP-Funt brytyjski</option>
@@ -40,6 +40,7 @@ const Form = () => (
           <option value="cad">CAD-Dolar kanadyjski</option>
           <option value="nzd">NZD-Dolar Nowozelandzki</option>
           <option value="sgd">SGD-Dolar Singapurski</option>
+          </select>
         </label>
       </p>
 
@@ -50,7 +51,7 @@ const Form = () => (
       <p className="label">
         Wychodzi:<strong className="result">N/A</strong>
       </p>
-    </fielset>
+    </fieldset>
   </form>
 );
 
