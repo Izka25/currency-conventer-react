@@ -1,16 +1,29 @@
+import {useState} from "react";
 import "./style.css";
+import currencies from "../currencies";
 
-const Form = () => (
-  <form className="form">
+const Form = ({ calculateResult, result }) => {
+  const [currency,setCurrency] = useState(currencies[0].short);
+  const [amount, setAmount] = useState("");
+
+const onSubmit = (event) => {
+  event.preventDefault();
+  calculateResult(currency, amount);
+}
+
+  return (
+  <form className="form" onSubmit={onSubmit}>
     <fieldset>
       <legend className="legend">Kalkulator walutowy</legend>
       <p>
         <label className="label">
-          Kwota:{" "}
+          Kwota w zł*:
           <input
+          value={amount}
+          onChange={({ target }) => setAmount(target.value)}
             className="cash"
             type="number"
-            placeholder="Kwota"
+            placeholder="Wpisz kwotę w zł"
             name="cash"
             step="1"
             min="1"
@@ -21,24 +34,24 @@ const Form = () => (
       </p>
       <p>
         <label className="label">
-          Waluta:{" "}
+          Waluta:
           <select
             className="currency"
+            value={currency}
+            onChange={({ target }) => setCurrency(target.value)}
             type="tekst"
             name="currency"
             placeholder="Wybór waluty"
             list="currency"
           >
-            <option value="eur">EUR-Euro</option>
-            <option value="aud">AUD-Dolar australijski</option>
-            <option value="gbp">GBP-Funt brytyjski</option>
-            <option value="jpy">JPY-Jen japoński</option>
-            <option value="chf">CHF-Frank szwajcarski</option>
-            <option value="usd">USD-Dolar amerykański</option>
-            <option value="hkd">HKD-Dolar hongkongu</option>
-            <option value="cad">CAD-Dolar kanadyjski</option>
-            <option value="nzd">NZD-Dolar Nowozelandzki</option>
-            <option value="sgd">SGD-Dolar Singapurski</option>
+            {currencies.map((currency => (
+              <option
+              key={currency.short}
+              value={currency.short}
+              >
+                {currency.name}
+              </option>
+            )))}
           </select>
         </label>
       </p>
@@ -46,8 +59,13 @@ const Form = () => (
       <p>
         <button className="submit button">Przelicz walutę!</button>
       </p>
+      <p className="stopka">
+        Kursy pochodzą ze strony nbp.pl z Tabeli nr 019/A/NBP/2022 z dnia 2022-01-28
+      </p>
+      
     </fieldset>
+  
   </form>
-);
+)};
 
 export default Form;
