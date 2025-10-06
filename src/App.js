@@ -12,16 +12,26 @@ const calculateResult = (currency, amount) => {
   const rate = currencies
   .find(({short}) => short === currency)
   .rate;
-};
+
+  setResult ({
+  sourceAmount: +amount,
+  targetAmount: amount/rate,
+  currency,
+});
+
+}
 
   return (
     <Container>
-      <Form />
-      <Result />
+      <Form 
       calculateResult={calculateResult}
+      result={result}
+      />
+      <Result />
+      
     </Container>
     
   );
-}
+};
 
 export default App;
