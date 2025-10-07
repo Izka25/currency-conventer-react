@@ -1,3 +1,13 @@
+# Currency- conventer
+
+# DEMO: https://izka25.github.io/currency-conventer-react/
+
+## Description
+
+This is a simple web application that allows you convert currecies.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
