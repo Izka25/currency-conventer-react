@@ -5,7 +5,7 @@ import Result from "./Result";
 import currencies from "./currencies";
 
 function App() {
-  const [result, setResult] = useState({});
+  const [result, setResult] = useState();
 
   const calculateResult = (currency, amount) => {
     const rate = currencies.find(({ short }) => short === currency).rate;
@@ -19,8 +19,8 @@ function App() {
 
   return (
     <Container>
-      <Form calculateResult={calculateResult} result={result} />
-      <Result />
+      <Form calculateResult={calculateResult} />
+      <Result result={result} />
     </Container>
   );
 }

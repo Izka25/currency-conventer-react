@@ -10,7 +10,7 @@ const Result = ({ result }) => (
         </strong>
       </>
     )}
-    <Result result={result} />
+  
   </p>
 );
 
