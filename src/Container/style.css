@@ -1,9 +1,10 @@
 .container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
    max-width: 700px;
-  margin: 100px;
+  margin: 70px;
   padding: 0 50px;
   border: 10px double rgb(0, 98, 255);
   background: rgb(43, 209, 255);
