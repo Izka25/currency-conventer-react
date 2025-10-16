@@ -53,7 +53,7 @@ const Form = ({ calculateResult, }) => {
           </label>
         </p>
         <p>
-          <button className="submit button">Przelicz walutę!</button>
+          <button className="button">Przelicz walutę!</button>
         </p>
 
         <p className="stopka">
