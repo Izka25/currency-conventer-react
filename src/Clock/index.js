@@ -17,7 +17,7 @@ export const Clock = () => {
   return (
     <div className="clock">
       Dzisiaj jest
-      {""}
+      {" "}
       {date.toLocaleString(undefined, {
         weekday: "long",
         hour: "2-digit",
