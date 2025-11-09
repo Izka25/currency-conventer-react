@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./style.css";
 import currencies from "../currencies";
+import { Legend, Label, Button, Input, Select, Stopka } from "./styled";
 
 const Form = ({ calculateResult, }) => {
   const [currency, setCurrency] = useState(currencies[0].short);
@@ -12,16 +12,15 @@ const Form = ({ calculateResult, }) => {
   };
 
   return (
-    <form className="form" onSubmit={onSubmit}>
+    <form onSubmit={onSubmit}>
       <fieldset>
-        <legend className="legend">Kalkulator walutowy</legend>
+        <Legend>Kalkulator walutowy</Legend>
         <p>
-          <label className="label">
+          <Label>
             Kwota w zł*:
-            <input
+            <Input
               value={amount}
               onChange={({ target }) => setAmount(target.value)}
-              className="cash"
               type="number"
               placeholder="Wpisz kwotę w zł"
               name="cash"
@@ -30,13 +29,12 @@ const Form = ({ calculateResult, }) => {
               autoFocus
               required
             />
-          </label>
+          </Label>
         </p>
         <p>
-          <label className="label">
+          <Label>
             Waluta:
-            <select
-              className="currency"
+            <Select
               value={currency}
               onChange={({ target }) => setCurrency(target.value)}
               type="tekst"
@@ -49,17 +47,17 @@ const Form = ({ calculateResult, }) => {
                   {currency.name}
                 </option>
               ))}
-            </select>
-          </label>
+            </Select>
+          </Label>
         </p>
         <p>
-          <button className="button">Przelicz walutę!</button>
+          <Button>Przelicz walutę!</Button>
         </p>
 
-        <p className="stopka">
+        <Stopka>
           Kursy pochodzą ze strony nbp.pl z Tabeli nr 019/A/NBP/2022 z dnia
           2022-01-28
-        </p>
+        </Stopka>
       </fieldset>
     </form>
   );
