@@ -1,5 +1,6 @@
 # Currency- conventer
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/bb447674-3bf8-4b17-b29a-468d6a7ea217" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/ee40ef31-5a5d-438c-a39b-ba5776a04136" />
+
 
 
 # DEMO: https://izka25.github.io/currency-conventer-react/
