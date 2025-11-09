@@ -1,7 +1,7 @@
-import "./style.css";
+import { Label } from "./styled";
 
 const Result = ({ result }) => (
-  <p className="label">
+  <Label>
     {result !== undefined && (
       <>
         {result.sourceAmount.toFixed(2)}&nbsp;PLN&nbsp;=&nbsp;
@@ -11,7 +11,7 @@ const Result = ({ result }) => (
       </>
     )}
   
-  </p>
+  </Label>
 );
 
 export default Result;
