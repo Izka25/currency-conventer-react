@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const Div = styled.div`
+export const StyledContainer = styled.div`
     display: flex;
     flex-direction: column;
     max-width: 700px;
     margin: 70px;
     padding: 0 50px;
-    border: 10px double rgb(0, 98, 255);
-    background: rgb(43, 209, 255);
+    border: 10px double ${({ theme }) => theme.color.blueRibbon};
+    background: ${({ theme }) => theme.color.dodgerBlue};
 
     @media (max-width: 767px) {
     display: flex;

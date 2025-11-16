@@ -16,19 +16,19 @@ export const Button = styled.button`
     font-weight: bold;
     width: 40%;
     padding: 5px;
-    background-color: yellow;
+    background-color: ${({ theme }) => theme.color.yellow};
 `;
 
 export const Input = styled.input`
     padding: 8px 6px 6px 6px;
-    background-color: lightgreen;
+    background-color: ${({ theme }) => theme.color.pastelGreen};
     font-weight: bold;
     font-size: 15px;
 `;
 
 export const Select = styled.select`
     padding: 8px 6px 6px 6px;
-    background-color: lightgreen;
+    background-color: ${({ theme }) => theme.color.pastelGreen};
     font-weight: bold;
     font-size: 15px;
 `;
@@ -36,5 +36,5 @@ export const Select = styled.select`
 export const Stopka = styled.p`
     font-size: 14px;
     text-align: center;
-    color: #555;
+    color: ${({ theme }) => theme.color.emperor};
 `;
