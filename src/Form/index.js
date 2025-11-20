@@ -17,7 +17,7 @@ const ratesData = useRatesData();
     });
   };
 
-  const [currency, setCurrency] = useState("PLN");
+  const [currency, setCurrency] = useState("EUR");
   const [amount, setAmount] = useState("");
 
   const onSubmit = (event) => {
