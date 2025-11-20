@@ -23,4 +23,4 @@ body {
   justify-content: center;
   background-position: center;
 }
-`
+`;
