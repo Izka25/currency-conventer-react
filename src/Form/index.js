@@ -1,9 +1,23 @@
 import { useState } from "react";
-import currencies from "../currencies";
-import { Legend, Label, Button, Input, Select, Stopka } from "./styled";
+import { Legend, Label, Button, Input, Select, Stopka, Loading, Failure, } from "./styled";
+import { useRatesData } from "./Result/useRatesData";
+import Result from "./Result";
 
-const Form = ({ calculateResult, }) => {
-  const [currency, setCurrency] = useState(currencies[0].short);
+export const Form = () => {
+const [result, setResult] = useState();
+const ratesData = useRatesData();
+
+  const calculateResult = (currency, amount) => {
+    const rate = ratesData.rates[currency];
+
+    setResult({
+      sourceAmount: +amount,
+      targetAmount: amount / rate,
+      currency,
+    });
+  };
+
+  const [currency, setCurrency] = useState("PLN");
   const [amount, setAmount] = useState("");
 
   const onSubmit = (event) => {
@@ -15,6 +29,19 @@ const Form = ({ calculateResult, }) => {
     <form onSubmit={onSubmit}>
       <fieldset>
         <Legend>Kalkulator walutowy</Legend>
+        {ratesData.state === "loading"
+        ? (
+          <Loading>
+            Sekundeczka..., Ładuje kursy walut dla Ciebie.
+          </Loading>
+        )
+        : 
+        ratesData.state === "error" ? (
+          <Failure>
+            Coś poszło nie tak..., sprawdź czy masz połączenie z internetem, jeśli tak, odśwież i spróbuj jeszcze raz, jeśli się znów nie uda, poczekaj z minutkę i spróbuj ponownie.
+          </Failure>
+        ) : (
+          <>
         <p>
           <Label>
             Kwota w zł*:
@@ -42,11 +69,14 @@ const Form = ({ calculateResult, }) => {
               placeholder="Wybór waluty"
               list="currency"
             >
-              {currencies.map((currency) => (
-                <option key={currency.short} value={currency.short}>
-                  {currency.name}
+              {Object.keys(ratesData.rates).map(((currency) => (
+                <option 
+                key={currency} 
+                value={currency}
+                >
+                  {currency}
                 </option>
-              ))}
+              )))}
             </Select>
           </Label>
         </p>
@@ -58,9 +88,14 @@ const Form = ({ calculateResult, }) => {
           Kursy pochodzą ze strony nbp.pl z Tabeli nr 019/A/NBP/2022 z dnia
           2022-01-28
         </Stopka>
-      </fieldset>
+        
+        <Result result={result}/>
+        
+      </>
+     
+            )}
+            </fieldset>
     </form>
   );
 };
 
-export default Form;
