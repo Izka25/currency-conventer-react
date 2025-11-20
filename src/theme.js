@@ -6,5 +6,7 @@ export const theme ={
       yellow: "#FFFF00",
       pastelGreen: "#90EE90",
       emperor: "#555555",
+      teal: "#008080",
+      crimson: "#DC143C",
     }
 }
