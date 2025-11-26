@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Legend, Label, Button, Input, Select, Stopka, Loading, Failure, } from "./styled";
+import { Legend, Label, Button, Input, Stopka, Loading, Failure, } from "./styled";
 import { useRatesData } from "./Result/useRatesData";
 import Result from "./Result";
 
@@ -12,7 +12,7 @@ const ratesData = useRatesData();
 
     setResult({
       sourceAmount: +amount,
-      targetAmount: amount / rate,
+      targetAmount: amount * rate.value,
       currency,
     });
   };
@@ -25,7 +25,7 @@ const ratesData = useRatesData();
     calculateResult(currency, amount);
   };
 
-  return (
+   return (
     <form onSubmit={onSubmit}>
       <fieldset>
         <Legend>Kalkulator walutowy</Legend>
@@ -61,7 +61,8 @@ const ratesData = useRatesData();
         <p>
           <Label>
             Waluta:
-            <Select
+            <Input
+            as="select"
               value={currency}
               onChange={({ target }) => setCurrency(target.value)}
               type="tekst"
@@ -77,7 +78,7 @@ const ratesData = useRatesData();
                   {currency}
                 </option>
               )))}
-            </Select>
+            </Input>
           </Label>
         </p>
         <p>
@@ -85,15 +86,13 @@ const ratesData = useRatesData();
         </p>
 
         <Stopka>
-          Kursy pochodzą ze strony nbp.pl z Tabeli nr 019/A/NBP/2022 z dnia
-          2022-01-28
+           Kursy walut pobierane z Europejskiego Banku Centralnego z dnia: {new Date().toLocaleDateString("pl-PL")}
         </Stopka>
         
         <Result result={result}/>
         
       </>
-     
-            )}
+     )}
             </fieldset>
     </form>
   );
