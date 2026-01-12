@@ -6,10 +6,11 @@ export const Legend = styled.legend`
 `;
 
 export const Label = styled.label`
+    display: block;
     font-size: 30px;
     font-style: italic;
     font-weight: bold;
-    padding: 10px;
+    margin-bottom: 8px;
 `;
 
 export const Button = styled.button`
@@ -20,13 +21,18 @@ export const Button = styled.button`
 `;
 
 export const Input = styled.input`
+    display: block;
+    width: 100%;
     padding: 8px 6px 6px 6px;
     background-color: ${({ theme }) => theme.color.pastelGreen};
     font-weight: bold;
     font-size: 15px;
+    margin-bottom: 20px;
 `;
 
 export const Select = styled.select`
+    display: block;
+    width: 100%;
     padding: 8px 6px 6px 6px;
     background-color: ${({ theme }) => theme.color.pastelGreen};
     font-weight: bold;
