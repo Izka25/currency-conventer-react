@@ -22,5 +22,6 @@ body {
   align-items: center;
   justify-content: center;
   background-position: center;
+  height: 100vh;
 }
 `;
