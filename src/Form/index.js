@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Legend, Label, Button, Input, Stopka, Loading, Failure, } from "./styled";
-import { useRatesData } from "./Result/useRatesData";
+import { useRatesData } from "./useRatesData";
 import Result from "./Result";
 
 export const Form = () => {
