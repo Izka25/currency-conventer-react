@@ -1,6 +1,6 @@
 # Currency- conventer
-<img<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/c4d52562-a913-4966-a670-065a176b89db" />
- />
+<imgwidth="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/c4d52562-a913-4966-a670-065a176b89db" />
+
 
 
 
