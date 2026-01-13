@@ -4,8 +4,8 @@ import { useRatesData } from "./useRatesData";
 import Result from "./Result";
 
 export const Form = () => {
-const [result, setResult] = useState();
-const ratesData = useRatesData();
+  const [result, setResult] = useState();
+  const ratesData = useRatesData();
 
   const calculateResult = (currency, amount) => {
     const rate = ratesData.rates[currency];
